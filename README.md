@@ -4,6 +4,10 @@
  * Serverport: 8080 (use: localhost:8080)
  * Java version: 17
  * Everything is present in the pom.xml (no need to download any library)
+### Steps to run User Management System 
+ * Download the source code and import in intellijIDEA.
+ * Go to localhost:8080/
+ * Type endpoints in url
  
 ### In this counter feature there is - 
  * count, variable to count url hits
