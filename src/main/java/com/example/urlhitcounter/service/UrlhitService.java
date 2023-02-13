@@ -9,35 +9,15 @@ import java.util.HashMap;
 @Component
 @Service
 public class UrlhitService {
-    private static int count = 0;
     private static HashMap<String,Integer> hm = new HashMap<>();
 
-    public static int getCount() {
-        return count;
+    public Visitors visitcount(String name) {
+        int count=hm.getOrDefault(name,0)+1;
+        hm.put(name,count);
+
+        Visitors visit=new Visitors(count,name);
+        return visit;
     }
 
-    public static void setCount(int count) {
-        UrlhitService.count = count;
-    }
-
-    public static HashMap<String, Integer> getHm() {
-        return hm;
-    }
-
-    public static void setHm(HashMap<String, Integer> hm) {
-        UrlhitService.hm = hm;
-    }
-
-    public Visitors visitcount() {
-        Visitors visitors = new Visitors(++count);
-        return visitors;
-    }
-
-    public String countview(String name) {
-//        int newcount = 0;
-     hm.put(name,hm.getOrDefault(name,0)+1);
-//         newcount++;
-      return name+": "+hm.get(name);
-    }
 
 }

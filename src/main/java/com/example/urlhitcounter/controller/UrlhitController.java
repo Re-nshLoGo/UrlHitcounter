@@ -13,12 +13,8 @@ public class UrlhitController {
     @Autowired
     private UrlhitService urlhitService;
 
-    @GetMapping("/count")
-    public Visitors viewcount(){
-        return urlhitService.visitcount();
-    }
     @GetMapping("/countby/visitor/{name}")
-    public String countvisitors(@PathVariable String name){
-        return urlhitService.countview(name);
+    public Visitors countvisitors(@PathVariable String name){
+        return urlhitService.visitcount(name);
     }
 }
